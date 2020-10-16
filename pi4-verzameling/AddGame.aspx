@@ -5,37 +5,44 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" href="main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
+    <div class="menu">
+            <a class="menu-item" href="CollectionViewer.aspx">Bekijk verzameling</a>
+            <a class="menu-item" href="AddGame.aspx">Spel toevoegen</a>
+            <a class="menu-item" href="Categories.aspx">Categoriën beheren</a>
+            </div>
     <form id="form1" runat="server">
         <div>
             <asp:FormView ID="FormView1" runat="server" DataKeyNames="id" DefaultMode="Insert" OnItemInserting="FormView1_ItemInserting">
                 <InsertItemTemplate>
-                    name:
+                    Spel naam:
                     <asp:TextBox ID="nameTextBox" runat="server" Text='<%# Bind("name") %>' />
                     <br />
-                    description:
+                    Beschrijving:
                     <asp:TextBox ID="descriptionTextBox" runat="server" Text='<%# Bind("description") %>' />
                     <br />
-                    price:
+                    Prijs:
                     <asp:TextBox ID="priceTextBox" runat="server" Text='<%# Bind("price") %>' />
                     <br />
-                    value:
+                    Waarde:
                     <asp:TextBox ID="valueTextBox" runat="server" Text='<%# Bind("value") %>' />
                     <br />
-                    category:
+                    Categorie:
                     <asp:TextBox ID="categoryTextBox" runat="server" Text='<%# Bind("category") %>' />
                     <br />
                     tags:
-                    <asp:TextBox ID="tagsTextBox" runat="server" Text='<%# Bind("tags") %>' />
+                    <asp:TextBox ID="tagsTextBox" runat="server" Text='<%# Bind("tags") %>' ToolTip="Tags gescheiden met ," />
                     <br />
-                    releaseDate:
+                    release datum:
                     <asp:TextBox ID="releaseDateTextBox" runat="server" Text='<%# Bind("releaseDate") %>' />
                     <br />
                     multiplayer:
                     <asp:CheckBox ID="multiplayerCheckBox" runat="server" Checked='<%# Bind("multiplayer") %>' />
                     <br />
-                    <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+                    <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Toevoegen" />
                 </InsertItemTemplate>
               
             </asp:FormView>

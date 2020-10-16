@@ -92,11 +92,11 @@ namespace pi4_verzameling
             return id;
         }
 
-        public static void AddGame(string name, string description, float price, float value, int category, string releaseDate, Boolean multiplayer)
+        public static void AddGame(string name, string description, float price, float value, int category, string releaseDate, Boolean multiplayer, int userId)
         {
             SqlConnection conn = new SqlConnection(connectionString);
 
-            SqlCommand cmd = new SqlCommand("Insert Into games(name, description, price, value, category, releaseDate, multiplayer) values (@name, @description, @price, @value, @category, @releaseDate, @multiplayer)", conn);
+            SqlCommand cmd = new SqlCommand("Insert Into games(name, description, price, value, category, releaseDate, multiplayer, userId) values (@name, @description, @price, @value, @category, @releaseDate, @multiplayer, @userId)", conn);
             conn.Open();
             cmd.Parameters.AddWithValue("@name", name);
             cmd.Parameters.AddWithValue("@description", description);
@@ -105,6 +105,7 @@ namespace pi4_verzameling
             cmd.Parameters.AddWithValue("@category", category);
             cmd.Parameters.AddWithValue("@releaseDate", Convert.ToDateTime(releaseDate));
             cmd.Parameters.AddWithValue("@multiplayer", multiplayer);
+            cmd.Parameters.AddWithValue("@userId", userId);
             cmd.ExecuteNonQuery();
             cmd.Dispose();
             conn.Close();

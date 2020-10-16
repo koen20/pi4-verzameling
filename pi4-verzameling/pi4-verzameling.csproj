@@ -68,8 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddGame.aspx" />
+    <Content Include="Categories.aspx" />
     <Content Include="CollectionViewer.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="login.aspx" />
     <Content Include="main.css" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -81,6 +83,13 @@
     <Compile Include="AddGame.aspx.designer.cs">
       <DependentUpon>AddGame.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Categories.aspx.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Categories.aspx.designer.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Data.cs" />
     <Compile Include="CollectionViewer.aspx.cs">
       <DependentUpon>CollectionViewer.aspx</DependentUpon>
@@ -91,6 +100,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

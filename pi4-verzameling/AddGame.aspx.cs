@@ -12,7 +12,7 @@ namespace pi4_verzameling
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            System.Diagnostics.Debug.WriteLine(Session["username"]);
         }
         protected void FormView1_ItemInserting(object sender, FormViewInsertEventArgs e)
         {
@@ -50,7 +50,10 @@ namespace pi4_verzameling
             }
 
 
-            Data.AddGame(name.Text, description.Text, float.Parse(price.Text), float.Parse(value.Text), categoryId, releaseDate.Text, multiplayer.Checked);
+            Data.AddGame(name.Text, description.Text, float.Parse(price.Text), float.Parse(value.Text)
+                , categoryId, releaseDate.Text, multiplayer.Checked, int.Parse(Session["userId"].ToString()));
+
+            //add tags to database
             int gameId = Data.GetId("games", name.Text);
             for(int k = 0; k < tagsId.Count; k++)
             {
